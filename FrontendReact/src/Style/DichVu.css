@@ -1,0 +1,97 @@
+/* Container chính */
+.dichvu-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+  font-family: "Arial", sans-serif;
+}
+
+/* Tiêu đề */
+.dichvu-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 32px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Thanh tìm kiếm và nút thêm */
+.input-search-bar-container {
+  font-style: italic !important;
+}
+.addDichVu-button {
+  background-color: #005b9a;
+  color: white;
+  border: none;
+  font-size: 16px;
+  padding: 8px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.addDichVu-button:hover {
+  background-color: #007bff !important;
+  color: white !important;
+}
+
+/* Bảng dịch vụ */
+.ant-table {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.ant-table-thead > tr > th {
+  background-color: #f7f7f7;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+.ant-table-tbody > tr > td {
+  padding: 10px;
+}
+
+.ant-table-tbody > tr:hover > td {
+  background-color: #f1f9ff;
+}
+
+/* Nút hành động */
+.update-button {
+  background-color: #83a603; /* Màu xanh chỉnh sửa */
+  color: white;
+}
+.update-button:hover {
+  background-color: #617b02; /* Đậm hơn khi hover */
+}
+.delete-button {
+  background-color: #fbbd03; /* Màu đỏ xóa */
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #9b7502; /* Đậm hơn khi hover */
+}
+
+/* Modal */
+.ant-modal-title {
+  font-size: 24px !important;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+.cancle-button {
+  background-color: #83a603; /* Màu xanh chỉnh sửa */
+  color: white;
+}
+.cancle-button:hover {
+  background-color: #617b02;
+}
+.save-button {
+  background-color: #fbbd03; /* Màu đỏ xóa */
+  color: white;
+}
+.save-button:hover {
+  background-color: #9b7502;
+}

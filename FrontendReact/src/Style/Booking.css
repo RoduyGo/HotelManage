@@ -1,0 +1,52 @@
+/* CSS chung cho các nút icon */
+.add-button {
+  background-color: #005b9a !important;
+  color: white !important;
+  font-size: 20px;
+}
+.icon-action {
+  font-size: 24px !important; /* Tăng kích thước icon */
+  padding: 5px !important;
+  margin-right: 8px !important;
+  border-radius: 4px !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Icon "Xem chi tiết" (view-icon) */
+.detailBooking-button {
+  background-color: #007bff;
+  color: white !important; /* Màu xanh */
+
+  font-size: 20px !important
+  ;
+}
+
+.detailBooking-button:hover {
+  background-color: #005b9a !important; /* Màu nền khi hover */
+}
+
+/* Icon "Xóa" (delete-icon) */
+.delete-icon {
+  background-color: #fbbd03 !important;
+  color: white !important;
+}
+
+.delete-icon:hover {
+  background-color: #9b7502 !important; /* Đậm hơn khi hover */
+}
+.service-button {
+  background-color: #617b02;
+  color: aliceblue;
+}
+.service-button:hover {
+  background-color: #83a603 !important;
+  color: #333;
+}
+.total-button {
+  background-color: #005b9a;
+  color: aliceblue;
+}
+.total-button:hover {
+  background-color: #0377ca;
+  color: #333;
+}

@@ -1,0 +1,40 @@
+/* Định dạng chung cho Modal */
+.service-add-modal {
+  font-family: "Arial", sans-serif;
+}
+
+/* Tiêu đề Modal */
+.service-add-modal .ant-modal-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+/* Căn chỉnh phần nội dung */
+.service-add-modal .ant-modal-body {
+  padding: 20px;
+}
+
+/* Form layout */
+
+/* Footer Modal */
+.service-add-modal-footer {
+  display: flex;
+  justify-content: flex-end; /* Căn nút về bên phải */
+  gap: 10px; /* Khoảng cách giữa các nút */
+}
+.cancle-button {
+  background-color: #617b02 !important;
+  color: white !important;
+}
+.cancle-button:hover {
+  background-color: #83a603 !important;
+}
+.save-button {
+  background-color: #fbbd03 !important;
+  color: white !important;
+}
+.save-button:hover {
+  background-color: #9b7502 !important;
+}
