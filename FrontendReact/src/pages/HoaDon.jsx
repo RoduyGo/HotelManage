@@ -17,8 +17,8 @@ const HoaDon = () => {
   const [editingHoaDon, setEditingHoaDon] = useState(null);
   const [isDetailModalVisible, setIsDetailModalVisible] = useState(false);
   const [detailHoaDon, setDetailHoaDon] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1); // Trang hiện tại
-const [pageSize, setPageSize] = useState(10); // Số lượng hóa đơn mỗi trang
+  const [currentPage, setCurrentPage] = useState(1); 
+const [pageSize, setPageSize] = useState(10); 
 
 
   useEffect(() => {
@@ -116,8 +116,6 @@ const [pageSize, setPageSize] = useState(10); // Số lượng hóa đơn mỗi 
           message: "Cập nhật thành công!",
           description: "Hóa đơn đã được cập nhật.",
         });
-  
-        // Cập nhật trực tiếp trạng thái trong danh sách `hoaDons`
         setHoaDons((prevHoaDons) =>
           prevHoaDons.map((hoaDon) =>
             hoaDon.maHoaDon === editingHoaDon.maHoaDon
@@ -125,8 +123,6 @@ const [pageSize, setPageSize] = useState(10); // Số lượng hóa đơn mỗi 
               : hoaDon
           )
         );
-  
-        // Cập nhật cả danh sách đang hiển thị (`filteredHoaDons`)
         setFilteredHoaDons((prevFilteredHoaDons) =>
           prevFilteredHoaDons.map((hoaDon) =>
             hoaDon.maHoaDon === editingHoaDon.maHoaDon
@@ -134,8 +130,6 @@ const [pageSize, setPageSize] = useState(10); // Số lượng hóa đơn mỗi 
               : hoaDon
           )
         );
-  
-        // Đóng modal
         closeEditModal();
       })
       .catch((error) => {

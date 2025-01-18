@@ -117,7 +117,6 @@ const DichVu = () => {
       key: "giaDichVu",
       render: (giaDichVu) => {
         if (giaDichVu) {
-          // Sử dụng toLocaleString để định dạng số và thay thế ký hiệu ₫ bằng VND
           return giaDichVu
             .toLocaleString("vi-VN", {
               style: "currency",
@@ -125,7 +124,7 @@ const DichVu = () => {
             })
             .replace("₫", "VND");
         }
-        return "Không có giá"; // Nếu không có giá
+        return "Không có giá";
       },
     },
 

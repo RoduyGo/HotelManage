@@ -11,18 +11,14 @@
   text-align: center;
 }
 
-/* Căn chỉnh phần nội dung */
 .service-add-modal .ant-modal-body {
   padding: 20px;
 }
 
-/* Form layout */
-
-/* Footer Modal */
 .service-add-modal-footer {
   display: flex;
-  justify-content: flex-end; /* Căn nút về bên phải */
-  gap: 10px; /* Khoảng cách giữa các nút */
+  justify-content: flex-end;
+  gap: 10px;
 }
 .cancle-button {
   background-color: #617b02 !important;

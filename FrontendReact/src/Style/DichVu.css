@@ -1,12 +1,10 @@
-/* Container chính */
+
 .dichvu-container {
   padding: 20px;
   max-width: 1200px;
   margin: auto;
   font-family: "Arial", sans-serif;
 }
-
-/* Tiêu đề */
 .dichvu-container h1 {
   text-align: center;
   margin-bottom: 30px;
@@ -14,8 +12,6 @@
   color: #333;
   font-weight: bold;
 }
-
-/* Thanh tìm kiếm và nút thêm */
 .input-search-bar-container {
   font-style: italic !important;
 }
@@ -34,8 +30,6 @@
   background-color: #007bff !important;
   color: white !important;
 }
-
-/* Bảng dịch vụ */
 .ant-table {
   border-radius: 8px;
   overflow: hidden;
@@ -56,25 +50,21 @@
 .ant-table-tbody > tr:hover > td {
   background-color: #f1f9ff;
 }
-
-/* Nút hành động */
 .update-button {
-  background-color: #83a603; /* Màu xanh chỉnh sửa */
+  background-color: #83a603;
   color: white;
 }
 .update-button:hover {
-  background-color: #617b02; /* Đậm hơn khi hover */
+  background-color: #617b02; 
 }
 .delete-button {
-  background-color: #fbbd03; /* Màu đỏ xóa */
+  background-color: #fbbd03; 
   color: white;
 }
 
 .delete-button:hover {
-  background-color: #9b7502; /* Đậm hơn khi hover */
+  background-color: #9b7502; 
 }
-
-/* Modal */
 .ant-modal-title {
   font-size: 24px !important;
   font-weight: bold;
@@ -82,14 +72,14 @@
   text-align: center;
 }
 .cancle-button {
-  background-color: #83a603; /* Màu xanh chỉnh sửa */
+  background-color: #83a603; 
   color: white;
 }
 .cancle-button:hover {
   background-color: #617b02;
 }
 .save-button {
-  background-color: #fbbd03; /* Màu đỏ xóa */
+  background-color: #fbbd03; 
   color: white;
 }
 .save-button:hover {

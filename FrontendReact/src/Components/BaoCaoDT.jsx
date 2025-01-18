@@ -5,23 +5,17 @@ import { Button } from 'antd';
 
 const BaoCaoDT = () => {
   const [data, setData] = useState([]);
-  const [currentMonth, setCurrentMonth] = useState('2024-12'); // Tháng hiện tại theo định dạng 'YYYY-MM'
-  const [allData, setAllData] = useState([]); // Lưu toàn bộ dữ liệu để dễ dàng chuyển tháng
+  const [currentMonth, setCurrentMonth] = useState('2024-12');
+  const [allData, setAllData] = useState([]); 
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Lấy dữ liệu doanh thu từ API
         const response = await axios.get('/home/hoadon/doanhthu');
         const result = response.data;
-
-        // Lọc và nhóm theo tháng, sau đó điền các ngày không có doanh thu
         const groupedData = groupByMonth(result);
         setAllData(groupedData);
-
-        // Lọc dữ liệu cho tháng hiện tại
         filterDataForMonth(currentMonth, groupedData);
-
       } catch (error) {
         console.error('Không lấy được dữ liệu', error);
       }
@@ -29,21 +23,12 @@ const BaoCaoDT = () => {
 
     fetchData();
   }, [currentMonth]);
-
-  // Hàm nhóm dữ liệu theo tháng và điền các ngày không có doanh thu
   const groupByMonth = (data) => {
     const result = [];
-
-    // Lấy tất cả các tháng có trong dữ liệu
     const months = [...new Set(data.map(item => `${item.year}-${item.month}`))];
-
     months.forEach(month => {
       const monthData = data.filter(item => `${item.year}-${item.month}` === month);
-      
-      // Tạo một mảng tháng với tất cả các ngày trong tháng
       const allDaysInMonth = getAllDaysInMonth(month);
-
-      // Kết hợp dữ liệu hiện tại với các ngày không có doanh thu (đặt doanh thu = 0)
       const fullMonthData = allDaysInMonth.map(day => {
         const dataForDay = monthData.find(item => item.day === day);
         return {
@@ -53,7 +38,6 @@ const BaoCaoDT = () => {
           revenue: dataForDay ? dataForDay.revenue : 0,
         };
       });
-
       result.push(...fullMonthData);
     });
 
@@ -93,9 +77,7 @@ const BaoCaoDT = () => {
     }
 
     const newMonthStr = `${newYear}-${newMonth.toString().padStart(2, '0')}`;
-    setCurrentMonth(newMonthStr); // Cập nhật tháng hiện tại
-
-    // Lọc dữ liệu cho tháng mới
+    setCurrentMonth(newMonthStr); 
     filterDataForMonth(newMonthStr, allData);
   };
 
@@ -106,31 +88,31 @@ const BaoCaoDT = () => {
     seriesField: 'month',
     xAxis: {
       title: {
-        text: 'Ngày', // Tiêu đề trục X
+        text: 'Ngày',
       },
       label: {
         style: {
-          fontSize: 12, // Kích thước chữ
-          fill: '#FF6347', // Màu đỏ cho chữ trục X
-          fontWeight: 'bold', // Đậm
+          fontSize: 12, 
+          fill: '#FF6347', 
+          fontWeight: 'bold', 
         },
       },
-      tickCount: 15, // Điều chỉnh số lượng tick (ngày) trên trục X
-      labelOffset: 12, // Khoảng cách giữa nhãn và trục
+      tickCount: 15, 
+      labelOffset: 12, 
     },
     yAxis: {
       title: {
-        text: 'Doanh Thu (VND)', // Tiêu đề trục Y
+        text: 'Doanh Thu (VND)',
       },
       label: {
-        formatter: (value) => `${formatNumberWithDots(value)} VND`, // Định dạng giá trị trục Y
+        formatter: (value) => `${formatNumberWithDots(value)} VND`, 
         style: {
-          fontSize: 12, // Kích thước chữ
-          fill: '#228B22', // Màu xanh lá cho chữ trục Y
-          fontWeight: 'bold', // Đậm
+          fontSize: 12, 
+          fill: '#228B22', 
+          fontWeight: 'bold', 
         },
       },
-      labelOffset: 12, // Khoảng cách giữa nhãn và trục
+      labelOffset: 12, 
     },
     lineStyle: {
       lineWidth: 3,

@@ -31,7 +31,7 @@ const Booking = () => {
   const fetchBookingDetail = async (maDatPhong) => {
     try {
       const response = await axios.get(`home/booking/${maDatPhong}`);
-      setSelectedBooking(response.data); // Cập nhật chi tiết booking
+      setSelectedBooking(response.data); 
     } catch (error) {
       console.error("Lỗi khi lấy chi tiết booking:", error);
       notification.error({

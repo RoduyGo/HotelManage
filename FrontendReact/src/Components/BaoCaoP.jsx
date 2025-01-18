@@ -50,12 +50,12 @@ const BaoCaoP = () => {
     plugins: {
       legend: {
         display: true,
-        position: 'right', // Đặt legend ở bên phải
+        position: 'right', 
         labels: {
-          boxWidth: 20, // Kích thước ô màu
-          padding: 15, // Khoảng cách giữa các mục trong legend
+          boxWidth: 20,
+          padding: 15,
           font: {
-            size: 14, // Kích thước chữ
+            size: 14, 
           },
         },
       },

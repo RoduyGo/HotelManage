@@ -19,8 +19,6 @@ const NewBooking = ({ visible, onClose, onSubmit }) => {
   const [customers, setCustomers] = useState([]);
   const [employees, setEmployees] = useState([]);
   const [availableRooms, setAvailableRooms] = useState([]);
-
-  // Fetch danh sách khách hàng
   useEffect(() => {
     const fetchCustomers = async () => {
       try {
@@ -33,7 +31,6 @@ const NewBooking = ({ visible, onClose, onSubmit }) => {
     fetchCustomers();
   }, []);
 
-  // Fetch danh sách nhân viên
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
@@ -46,7 +43,6 @@ const NewBooking = ({ visible, onClose, onSubmit }) => {
     fetchEmployees();
   }, []);
 
-  // Fetch danh sách phòng còn trống
   useEffect(() => {
     const fetchAvailableRooms = async () => {
       try {
@@ -62,7 +58,6 @@ const NewBooking = ({ visible, onClose, onSubmit }) => {
     fetchAvailableRooms();
   }, []);
 
-  // Reset form
   const resetForm = () => {
     setFormData({
       maKhachHang: "",
@@ -75,22 +70,19 @@ const NewBooking = ({ visible, onClose, onSubmit }) => {
     });
   };
 
-  // Xử lý thay đổi dữ liệu form
   const handleChange = (name, value) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Xử lý gửi form
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(formData);
-    resetForm(); // Reset lại form sau khi submit thành công
+    resetForm();
     onClose();
   };
 
-  // Xử lý khi modal bị đóng
   const handleClose = () => {
-    resetForm(); // Reset form khi đóng modal
+    resetForm(); 
     onClose();
   };
 
@@ -103,7 +95,6 @@ const NewBooking = ({ visible, onClose, onSubmit }) => {
       className="new-booking-modal"
     >
       <form className="new-booking-form" onSubmit={handleSubmit}>
-        {/* Khách hàng */}
         <div className="form-group">
           <label>Khách hàng (Mã Khách Hàng)</label>
           <Select
@@ -124,7 +115,6 @@ const NewBooking = ({ visible, onClose, onSubmit }) => {
           </Select>
         </div>
 
-        {/* Phòng */}
         <div className="form-group">
           <label>Phòng (Mã Phòng)</label>
           <Select
@@ -146,7 +136,6 @@ const NewBooking = ({ visible, onClose, onSubmit }) => {
           </Select>
         </div>
 
-        {/* Nhân viên */}
         <div className="form-group">
           <label>Nhân viên (Mã Nhân Viên)</label>
           <Select
@@ -166,8 +155,6 @@ const NewBooking = ({ visible, onClose, onSubmit }) => {
             ))}
           </Select>
         </div>
-
-        {/* Ngày nhận phòng */}
         <div className="form-group">
           <label>Ngày nhận phòng</label>
           <Input
@@ -178,8 +165,6 @@ const NewBooking = ({ visible, onClose, onSubmit }) => {
             required
           />
         </div>
-
-        {/* Ngày trả phòng */}
         <div className="form-group">
           <label>Ngày trả phòng</label>
           <Input
@@ -190,8 +175,6 @@ const NewBooking = ({ visible, onClose, onSubmit }) => {
             required
           />
         </div>
-
-        {/* Giá phòng thực tế */}
         <div className="form-group">
           <label>Giá Phòng Thực Tế</label>
           <Input
@@ -203,8 +186,6 @@ const NewBooking = ({ visible, onClose, onSubmit }) => {
             required
           />
         </div>
-
-        {/* Trạng thái đặt phòng */}
         <div className="form-group">
           <label>Trạng thái đặt phòng</label>
           <Select
@@ -216,8 +197,6 @@ const NewBooking = ({ visible, onClose, onSubmit }) => {
             <Option value="dang_su_dung">Đang sử dụng</Option>
           </Select>
         </div>
-
-        {/* Nút hành động */}
         <div className="form-actions">
           <Button type="primary" htmlType="submit">
             Lưu
